@@ -1,0 +1,35 @@
+name: Add to Project and Label Issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    name: Add issue to Ignite GitHub Project
+    steps:
+      - name: Add to project
+        uses: actions/add-to-project@v0.6.0
+        with:
+          project-url: https://github.com/orgs/microsoft/projects/1
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+
+  label_issues:
+    runs-on: ubuntu-latest
+    name: Apply labels to new issues
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - name: Add default labels
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['triage', 'ignite-2025', 'needs-review']
+            });
