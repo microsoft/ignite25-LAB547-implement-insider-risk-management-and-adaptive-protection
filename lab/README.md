@@ -17,7 +17,7 @@ To participate in this workshop, you'll need:
 
 ## Get Started
 
-To get started, open the [lab instructions](./instructions/IRM-1-insider-risk-management).
+To get started, open the [lab instructions](./instructions/IRM-1-insider-risk-management.md).
 
 ## Discussions
 
