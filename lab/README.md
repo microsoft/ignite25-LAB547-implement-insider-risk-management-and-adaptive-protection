@@ -6,7 +6,7 @@ In this workshop, you'll use Microsoft Purview Insider Risk Management to detect
 
 If you're not attending AI Tour, you can still complete this lab using your own Microsoft 365 E5 environment with access to Microsoft Purview Insider Risk Management and DLP.
 
-## Pre-Requisites
+## Prerequisites
 
 To participate in this workshop, you'll need:
 
